@@ -11,14 +11,23 @@ This package is mainly a personal package, so it is not available on CRAN.
 To download this package directly from GitHub, you'll need to use the "devtools" package.
 It's easiest to do this within RStudio.
 
-1) Install the [devtools](https://github.com/hadley/devtools) package from CRAN. 
-`install.packages("devtools")`
+1) Install the [devtools](https://github.com/hadley/devtools) and [khroma](https://packages.tesselle.org/khroma/) packages from CRAN. 
+``` R
+install.packages("devtools")
+install.packages("khroma")
+```
 
 2) Load the devtools package:
-`library(devtools)'
+```R
+library(devtools)
+```
 
 3) Install kulaR directly from GitHub.
-`install_github("polarSaunderson/kulaR")`
+```R
+devtools::install_github("polarSaunderson/kulaR")
+```
 
 4) Load the kulaR package
-`library(kulaR)`
+```R
+library(kulaR)
+```
