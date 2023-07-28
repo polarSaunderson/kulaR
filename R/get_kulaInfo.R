@@ -31,15 +31,22 @@ get_kulaInfo <- function(x, palette = NULL, skipMid = NULL, tickCount = 12) {
 
   # Code -----------------------------------------------------------------------
   # Get base range
+  zRange <- NA                    # preallocate to run through iterations
+
+  # SpatRaster are awkward
   if ("SpatRaster" %in% is(x)) {
-    zRange <- range(terra::values(x), na.rm = TRUE)
-  } else if ("list" %in% is(x)) {
-    zRange <- NA
-    for (ii in seq_along(x)) {
-      zRange <- range(c(zRange, get_zRange(x[[ii]])), na.rm = TRUE)
+    iiTerations <- 1:terra::nlyr(x)
+  } else {
+    iiTerations <- seq_along(x)
+  }
+
+  # loop (necessary for lists & multiple layers)
+  for (ii in iiTerations) {
+    iiData <- x[[ii]]
+    if ("SpatRaster" %in% is(iiData)) {
+      iiData <- terra::values(iiData)
     }
-  } else if ("numeric" %in% is(x) | "matrix" %in% is(x)) {
-    zRange <- range(x, na.rm = TRUE)
+    zRange <- range(c(zRange, iiData), na.rm = TRUE)
   }
 
   # Define basic values --------------------------------------------------------

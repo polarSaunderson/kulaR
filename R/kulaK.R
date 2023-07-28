@@ -102,7 +102,7 @@ kulaK <- function(palette,
   }
   include <- domR::set_if_null(unlist(include),
                                seq_along(kula)) # include all colours
-  kula <- kula[include]
+  kula   <- kula[include]
   kNames <- kNames[include]
 
   # Change colour opacity
