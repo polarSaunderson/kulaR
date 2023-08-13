@@ -34,8 +34,8 @@ get_kulaInfo <- function(x, palette = NULL, skipMid = NULL, tickCount = 12) {
   zRange <- NA                    # preallocate to run through iterations
 
   # SpatRaster are awkward
-  if ("SpatRaster" %in% is(x)) {
-    iiTerations <- 1:terra::nlyr(x)
+  if ("SpatRaster" %in% methods::is(x)) {
+    iiTerations <- 1:(terra::nlyr(x))
   } else {
     iiTerations <- seq_along(x)
   }
@@ -43,7 +43,7 @@ get_kulaInfo <- function(x, palette = NULL, skipMid = NULL, tickCount = 12) {
   # loop (necessary for lists & multiple layers)
   for (ii in iiTerations) {
     iiData <- x[[ii]]
-    if ("SpatRaster" %in% is(iiData)) {
+    if ("SpatRaster" %in% methods::is(iiData)) {
       iiData <- terra::values(iiData)
     }
     zRange <- range(c(zRange, iiData), na.rm = TRUE)
