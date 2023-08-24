@@ -68,6 +68,8 @@ kulaK <- function(palette,
     kInfo <- khroma::info()
     if (kInfo$type[kInfo$palette == palette] == "diverging") {
       count <- count + ( 2 * skipMid)
+    } else {
+      skipMid <- NULL
     }
   }
 
