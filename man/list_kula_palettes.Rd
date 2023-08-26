@@ -15,6 +15,6 @@ Options are "diverging", "sequential", and "qualitative".}
 used in other functions.}
 }
 \description{
-A wrapper around khroma::info() that is fed into the
-other "list_kulaX_palettes" functions. kulaInfo is invisibly returned.
+A wrapper around \code{khroma::info()} that is fed into the other
+\code{list_kulaX_palettes} functions. kulaInfo is invisibly returned.
 }

@@ -12,6 +12,6 @@ list_kulaD_palettes(print = TRUE)
 used in other functions.}
 }
 \description{
-Just a way of using khroma::info(), but only showing diverging
+A wrapper around \code{khroma::info()}, but only showing diverging
 colour schemes. kulaInfo is invisibly returned.
 }

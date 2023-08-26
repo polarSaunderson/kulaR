@@ -12,6 +12,7 @@ list_kulaS_palettes(print = TRUE)
 used in other functions.}
 }
 \description{
-Just a way of using khroma::info(), but only showing
-sequential colour schemes. kulaInfo is invisibly returned.
+A wrapper around \code{khroma::info()}, but only showing sequential
+colour schemes. kulaInfo is invisibly returned. Use \code{list_kulaC_palettes}
+for circular palettes.
 }
