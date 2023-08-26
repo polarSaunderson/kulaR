@@ -8,10 +8,13 @@ annotate_kulaBar(
   aboveLeft = "",
   above = "",
   aboveRight = "",
+  midLeft = "",
+  mid = "",
+  midRight = "",
   belowLeft = "",
   below = "",
   belowRight = "",
-  offset_v = 0.1,
+  offset_v = c(10, 15),
   offset_h = 0,
   cex = 0.75
 )
@@ -20,26 +23,32 @@ annotate_kulaBar(
 \item{aboveLeft, above, aboveRight}{"string": Text above the kulaBar in the
 respective positions.}
 
+\item{midLeft, mid, midRight}{"string": Text aligned centred against the
+kulaBar in the respective positions.}
+
 \item{belowLeft, below, belowRight}{"string": Text below the kulaBar in the
 respective positions.}
 
 \item{offset_v}{numeric: How far from the kulaBar should the text be
 located vertically? Positive values move text away from the kulaBar; unit
-is fractions of the kulaBar height. If two values are provided, the first
-values moves the text strings above the bar, and the second the strings
-below; for a single value, both sets are moved the same distance \emph{away}
-(if positive) or \emph{towards} (if negative) from the kulaBar.}
+is percentage of the kulaBar height. If two values are provided, the
+first values moves the text strings above the bar, and the second the
+strings below; for a single value, both sets are moved the same distance
+\emph{away} (if positive) or \emph{towards} (if negative) from the kulaBar.
+'midLeft', 'mid' and 'midRight' text cannot be vertically offset, they
+just stick to the centre of the kulaBar.}
 
 \item{offset_h}{numeric: As for 'offset_v' but horizontal offsets. If two
 values are supplied, the first applies to the left side and the second to
-the right side. Units are also fractions of the kulaBar \emph{height}.}
+the right side. Units are percentage of the kulaBar \emph{width}. 'mid',
+'above' and 'below' text cannot be horizontally offset, they just stick
+to the centre of the kulaBar.}
 
 \item{cex}{numeric: How large should the text be?}
 }
 \description{
 This function is particularly useful when a kulaBar displays
 differences that are not immediately intuitive. The function simply adds
-text at up to 6 locations around the kulaBar. It needs to be called
-immediately after using \code{add_kulaBar()}. It currently only works for
-horizontal kulaBars.
+text at up to 9 locations around the kulaBar. It needs to be called
+immediately after using \code{add_kulaBar()}.
 }

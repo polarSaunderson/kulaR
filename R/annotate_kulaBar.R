@@ -1,27 +1,33 @@
 annotate_kulaBar <- function(aboveLeft = "", above = "", aboveRight = "",
+                             midLeft = "", mid = "", midRight = "",
                              belowLeft = "", below = "", belowRight = "",
-                             offset_v = 0.1, offset_h = 0, cex = 0.75) {
+                             offset_v = c(10, 15), offset_h = 0, cex = 0.75) {
   #' Add text around a kulaBar to explain the colours
   #'
   #' @description This function is particularly useful when a kulaBar displays
   #'   differences that are not immediately intuitive. The function simply adds
-  #'   text at up to 6 locations around the kulaBar. It needs to be called
-  #'   immediately after using `add_kulaBar()`. It currently only works for
-  #'   horizontal kulaBars.
+  #'   text at up to 9 locations around the kulaBar. It needs to be called
+  #'   immediately after using `add_kulaBar()`.
   #'
   #' @param aboveLeft,above,aboveRight "string": Text above the kulaBar in the
   #'   respective positions.
+  #' @param midLeft,mid,midRight "string": Text aligned centred against the
+  #'   kulaBar in the respective positions.
   #' @param belowLeft,below,belowRight "string": Text below the kulaBar in the
   #'   respective positions.
   #' @param offset_v numeric: How far from the kulaBar should the text be
   #'   located vertically? Positive values move text away from the kulaBar; unit
-  #'   is fractions of the kulaBar height. If two values are provided, the first
-  #'   values moves the text strings above the bar, and the second the strings
-  #'   below; for a single value, both sets are moved the same distance *away*
-  #'   (if positive) or *towards* (if negative) from the kulaBar.
+  #'   is percentage of the kulaBar height. If two values are provided, the
+  #'   first values moves the text strings above the bar, and the second the
+  #'   strings below; for a single value, both sets are moved the same distance
+  #'   *away* (if positive) or *towards* (if negative) from the kulaBar.
+  #'   'midLeft', 'mid' and 'midRight' text cannot be vertically offset, they
+  #'   just stick to the centre of the kulaBar.
   #' @param offset_h numeric: As for 'offset_v' but horizontal offsets. If two
   #'   values are supplied, the first applies to the left side and the second to
-  #'   the right side. Units are also fractions of the kulaBar *height*.
+  #'   the right side. Units are percentage of the kulaBar *width*. 'mid',
+  #'   'above' and 'below' text cannot be horizontally offset, they just stick
+  #'   to the centre of the kulaBar.
   #' @param cex numeric: How large should the text be?
   #'
   #' @export
@@ -46,9 +52,12 @@ annotate_kulaBar <- function(aboveLeft = "", above = "", aboveRight = "",
     offset_h <- c(offset_h, offset_h)
   }
 
+  offset_v <- offset_v / 100
+  offset_h <- offset_h / 100
+
   # above left
   graphics::text(labels = aboveLeft,
-                 x = leftX - (heightY * offset_h[1]),
+                 x = leftX - (widthX * offset_h[1]),
                  y = aboveY + (heightY * offset_v[1]),
                  adj = c(0.5, 0.5), cex = cex, xpd = TRUE)
 
@@ -60,14 +69,33 @@ annotate_kulaBar <- function(aboveLeft = "", above = "", aboveRight = "",
 
   # above right
   graphics::text(labels = aboveRight,
-                 x = rightX + (heightY * offset_h[2]),
+                 x = rightX + (widthX * offset_h[2]),
                  y = aboveY + (heightY * offset_v[1]),
                  adj = c(0.5, 0.5), cex = cex, xpd = TRUE)
 
 
+  # mid left
+  graphics::text(labels = midLeft,
+                 x = leftX - (widthX * offset_h[1]),
+                 y = midY,
+                 adj = c(0.5, 0.5), cex = cex, xpd = TRUE)
+
+
+  # middle
+  graphics::text(labels = mid,
+                 x = midX,
+                 y = midY,
+                 adj = c(0.5, 0.5), cex = cex, xpd = TRUE)
+
+  # mid right
+  graphics::text(labels = midRight,
+                 x = rightX + (widthX * offset_h[1]),
+                 y = midY,
+                 adj = c(0.5, 0.5), cex = cex, xpd = TRUE)
+
   # below left
   graphics::text(labels = belowLeft,
-                 x = leftX - (heightY * offset_h[1]),
+                 x = leftX - (widthX * offset_h[1]),
                  y = belowY - (heightY * offset_v[2]),
                  adj = c(0.5, 0.5), cex = cex, xpd = TRUE)
 
@@ -79,7 +107,7 @@ annotate_kulaBar <- function(aboveLeft = "", above = "", aboveRight = "",
 
   # above right
   graphics::text(labels = belowRight,
-                 x = rightX + (heightY * offset_h[2]),
+                 x = rightX + (widthX * offset_h[2]),
                  y = belowY - (heightY * offset_v[2]),
                  adj = c(0.5, 0.5), cex = cex, xpd = TRUE)
 
