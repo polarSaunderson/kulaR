@@ -14,7 +14,8 @@ The public version of this repo can be accessed at:
 
 ## To-Do
 ### 2023-07-28
-- [ ] Work on add_kula_bar & associated text / annotation functions
+- [X] Create add_kula_bar 
+  - [ ] Work on associated text / annotation functions
 - [ ] Figure out the link between this package & domR (e.g. pre_plot, add_axis)
 - [ ] Add the plot_kula_palettes functions
 - [ ] Fix the part of kulaK that doesn't work great
