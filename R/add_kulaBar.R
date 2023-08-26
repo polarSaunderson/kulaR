@@ -62,6 +62,9 @@ add_kulaBar <- function(kula,
   #'
   #'     # Without first defining the colour palette
   #'     add_kulaBar(kula = "romaO", range = c(0, 360), increments = 45)
+  #'
+  #'     # Also works with any valid colours even if not kula / khroma defined
+  #'     add_kulaBar(kula = c("red", "blue", "black", "pink"), range = c(1, 3))
   #'   }
   #'
   #'
@@ -116,7 +119,7 @@ add_kulaBar <- function(kula,
   if (is.null(labels)) {
     labels <- kGap
     kPrec  <- signif(labels, 3) |> domR::count_decimal_places() |> median()
-    labels <- round(labels, kPrec)
+    labels <- round(labels, kPrec + 1)
 
     # Make sure a tick occurs on 0 if it is in there
     if (0 %in% labels) {

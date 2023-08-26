@@ -81,6 +81,9 @@ the \code{graphics::image()}, and then uses \code{figuR::add_axis()}.
 
     # Without first defining the colour palette
     add_kulaBar(kula = "romaO", range = c(0, 360), increments = 45)
+
+    # Also works with any valid colours even if not kula / khroma defined
+    add_kulaBar(kula = c("red", "blue", "black", "pink"), range = c(1, 3))
   }
 
 
