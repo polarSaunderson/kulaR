@@ -52,3 +52,22 @@ differences that are not immediately intuitive. The function simply adds
 text at up to 9 locations around the kulaBar. It needs to be called
 immediately after using \code{add_kulaBar()}.
 }
+\examples{
+  \dontrun{
+    # horizontal bar
+    kk <- kulaD(10)
+    add_kulaBar(kk, c(-5, 5), mar = c(5, 4, 5, 4))
+    annotate_kulaBar("colder",    NA,   "warmer",
+                     "OR",        NULL, "OR",
+                     "less warm", "",   "less cold")
+    # vertical bar
+    kk <- kulaD(10)
+    add_kulaBar(kk, c(-5, 5), mar = c(5, 15, 5, 15), tickAxis = 2)
+    annotate_kulaBar("warmer", "OR", "less cold",
+                     NA,       NULL, "",
+                     "colder", "OR", "less warm")
+  }
+
+
+
+}
