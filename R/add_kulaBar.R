@@ -104,10 +104,10 @@ add_kulaBar <- function(kula,
   # Determine kulaBar orientation
   if (tickAxis %in% c(1, 3)) {                               # horizontal
     kulaMatrix <- matrix(1:(kCount), nrow = kCount)
-    nameAxis   <- domR::set_if_null(nameAxis, 3)
+    nameAxis   <- set_if_null(nameAxis, 3)   # from domR
   } else if (tickAxis %in% c(2, 4)) {                        # horizontal
     kulaMatrix <- matrix(1:(kCount), ncol = kCount)
-    nameAxis   <- domR::set_if_null(nameAxis, tickAxis)
+    nameAxis   <- set_if_null(nameAxis, tickAxis)  # from domR
   }
 
   # Define colours
@@ -118,19 +118,21 @@ add_kulaBar <- function(kula,
   # Prepare labels
   if (is.null(labels)) {
     labels <- kGap
-    kPrec  <- signif(labels, 3) |> domR::count_decimal_places() |> median()
+    kPrec  <- signif(labels, 3) |>
+      count_decimal_places() |>           # from domR
+      stats::median()
     labels <- round(labels, kPrec + 1)
 
     # Make sure a tick occurs on 0 if it is in there
     if (0 %in% labels) {
       zeroIndex  <- which(labels == 0)
       unders     <- rev(seq(zeroIndex, 1, -labelEvery))
-      labelFirst <- domR::set_if_null(labelFirst, unders[1])
+      labelFirst <- set_if_null(labelFirst, unders[1]) # from domR
     }
   }
 
   # Prep area
-  mar <- domR::set_if_null(mar, graphics::par("mar"))
+  mar <- set_if_null(mar, graphics::par("mar"))  # from domR
   graphics::par(mar = mar)
 
   # Plot the kulaBar

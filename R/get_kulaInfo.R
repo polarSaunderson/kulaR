@@ -79,15 +79,15 @@ get_kulaInfo <- function(x, palette = NULL, skipMid = NULL, tickCount = 12) {
   # Define colours -------------------------------------------------------------
   if (zNegatives > 0 & zPositives > 0) {
     zHalf   <- max(zNegatives, zPositives)
-    palette <- domR::set_if_null(palette, "BuRd")
+    palette <- set_if_null(palette, "BuRd")  # from domR
     zKula   <- kulaK(palette, count = zHalf * 2,
                      include = c(zNegatives, zPositives),
                      skipMid = skipMid)
   } else {
     if (zPositives > 0) {
-      palette <- domR::set_if_null(palette, "lajolla")
+      palette <- set_if_null(palette, "lajolla")  # from domR
     } else if (zNegatives > 0) {
-      palette <- domR::set_if_null(palette, "devon")
+      palette <- set_if_null(palette, "devon")  # from domR
     }
     zKula   <- kulaK(palette, count = length(zTicks) - 1)
   }

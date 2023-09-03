@@ -1,7 +1,7 @@
 Package: kulaR
 Type: Package
 Title: Easily Use Colour Schemes in R
-Version: 0.0.1.0
+Version: 0.0.1.1
 Authors@R: 
     person("Dominic", "Saunderson",
            role = c("aut", "cre"),
@@ -19,6 +19,6 @@ Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
 Imports:
     khroma,
-    methods
-Suggests:
-    domR
+    methods,
+    stats,
+    grDevices

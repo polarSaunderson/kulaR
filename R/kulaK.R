@@ -102,13 +102,13 @@ kulaK <- function(palette,
     }
     include <- c(keepLeft, keepRight)
   }
-  include <- domR::set_if_null(unlist(include),
-                               seq_along(kula)) # include all colours
+  include <- set_if_null(unlist(include), # from domR
+                         seq_along(kula)) # include all colours
   kula   <- kula[include]
   kNames <- kNames[include]
 
   # Change colour opacity
-  opacity <- domR::set_if_null(opacity, 10)
+  opacity <- set_if_null(opacity, 10) # from domR
   opacity <- substring(grDevices::rgb(0,0,0,
                                       alpha = opacity,
                                       maxColorValue = 10), 8, 9)
