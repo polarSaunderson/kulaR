@@ -13,6 +13,9 @@ The public version of this repo can be accessed at:
   https://github.com/polarSaunderson/kulaR
 
 ## To-Do
+### 2023-08-26
+- [ ] Improve documentation where necessary
+
 ### 2023-07-28
 - [X] Create add_kula_bar 
   - [X] Work on associated text / annotation functions
