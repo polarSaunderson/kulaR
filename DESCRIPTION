@@ -1,17 +1,18 @@
 Package: kulaR
 Type: Package
 Title: Easily Use Colour Schemes in R
-Version: 0.0.0.3
+Version: 0.0.1.0
 Authors@R: 
     person("Dominic", "Saunderson",
            role = c("aut", "cre"),
            email = "dominicsaunderson@gmail.com",
            comment = c(ORCID = "0000-0001-7440-0101"))
-Description: kulaR is largely a wrapper around the "khroma" package to automate
-    common tasks with colours in R. It builds off the existing colour palettes 
-    in khroma, which are colourblind safe, but provides an alternative, unified 
-    syntax for using the palettees. There are also capabilities of creating 
-    better automated colour schemes, and to add colour bars and legends.
+Description: `kulaR` is largely a wrapper around the "khroma" package to 
+    automate common tasks with colours in R. It builds off the existing colour 
+    palettes in "khroma"", which are colourblind safe, but provides an 
+    alternative, unified syntax for using the palettees. There are also 
+    capabilities of creating better automated colour schemes, and to add custom
+    colour bars and legends.
 License: GPL (>= 2)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
