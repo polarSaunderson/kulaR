@@ -13,6 +13,9 @@ The public version of this repo can be accessed at:
   https://github.com/polarSaunderson/kulaR
 
 ## To-Do
+### 2023-09-03
+- [ ] Verify replacement of `terra` calls definitely works
+
 ### 2023-08-26
 - [ ] Improve documentation where necessary
 

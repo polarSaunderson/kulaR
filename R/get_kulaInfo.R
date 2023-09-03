@@ -35,7 +35,7 @@ get_kulaInfo <- function(x, palette = NULL, skipMid = NULL, tickCount = 12) {
 
   # SpatRaster are awkward
   if ("SpatRaster" %in% methods::is(x)) {
-    iiTerations <- 1:(terra::nlyr(x))
+    iiTerations <- 1:(dim(x)[3])            # iiTerations <- 1:(terra::nlyr(x))
   } else {
     iiTerations <- seq_along(x)
   }
@@ -44,7 +44,7 @@ get_kulaInfo <- function(x, palette = NULL, skipMid = NULL, tickCount = 12) {
   for (ii in iiTerations) {
     iiData <- x[[ii]]
     if ("SpatRaster" %in% methods::is(iiData)) {
-      iiData <- terra::values(iiData)
+      iiData <- as.matrix(iiData)           # iiData <- terra::values(iiData)
     }
     zRange <- range(c(zRange, iiData), na.rm = TRUE)
   }

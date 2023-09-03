@@ -53,12 +53,13 @@ kulaK <- function(palette,
   #'   colour to ignore (or highlight) them.
   #'
   #' @examples
-  #' plot(kulaK("BuRd", 10))
-  #' plot(kulaK("BuRd", 20))
-  #' plot(kulaK("BuRd", 10, include = c(1:5, 10:14)))
-  #' plot(kulaK("BuRd", 10, skipMid = 2))
-  #' plot(kulaK("BuRd", 10, reverse = TRUE))
-  #' plot(kulaK("BuRd", 10, addFirst = "black"))
+  #'    plot(kulaK("BuRd", 10))
+  #'    plot(kulaK("BuRd", 10, include = c(3, 5)))
+  #'    plot(kulaK("BuRd", 10, include = c(1:8)))
+  #'    plot(kulaK("BuRd", 20, include = c(1:8, 13:16)))
+  #'    plot(kulaK("BuRd", 10, skipMid = 2))
+  #'    plot(kulaK("BuRd", 10, reverse = TRUE))
+  #'    plot(kulaK("BuRd", 10, addFirst = "black"))
   #'
   #' @export
 
