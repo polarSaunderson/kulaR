@@ -12,6 +12,7 @@ add_kulaBar(
   nameAxis = NULL,
   labels = NULL,
   mar = NULL,
+  frame = "black",
   labelFirst = 1,
   labelEvery = 1,
   ...
@@ -20,51 +21,58 @@ add_kulaBar(
 \arguments{
 \item{kula}{The colours to plot in the colour bar. Either a vector of
 colours (e.g. a colour_scheme from \code{khroma}), or a string that is fed
-into \code{kulaK()} (a wrapper around \code{khroma::colour()}). Usually, it makes
-more sense to provide a vector (e.g. the output of \code{kulaR::kulaK()})
-because this provides more flexibility and is likely being used in
-whatever the colour bar refers to.}
+into \code{\link[=kulaK]{kulaK()}} (which is a just a wrapper around \code{\link[khroma:colour]{khroma::colour()}}).
+
+Usually, it makes more sense to input a vector (e.g. the output of
+\code{\link[=kulaK]{kulaK()}}) because it allows more flexibility in colour definitions and
+is likely being used in whatever the colour bar refers to.}
 
 \item{range}{vector: min and max values for the kulaBar. The min will
 always be plotted to the left of horizontal bars, or at the bottom of
 vertical bar.}
 
 \item{increments}{numeric: How much change is represented by one block of
-colour along the bar? If kula is a colour scheme, this argument is
-ignored and the increments are calculated automatically by dividing the
-full range by the length of the kula vector. If 'kula' is a string (e.g.
-"BuRd"), the increments cannot be calculated automatically so this value
-is necessary; in such a case, the difference between the 'range' values
-must be an exact multiple of the 'increment' argument.}
+colour along the bar?
+
+If 'kula' is a colour scheme, this argument is ignored and the increments
+are calculated automatically by dividing the 'range' by the length of the
+'kula' vector.
+
+If 'kula' is a string (e.g. "BuRd"), the increments cannot be calculated
+automatically and this value is mandatory; in such a case, the difference
+between the 'range' values must be an exact multiple of the 'increment'
+argument.}
 
 \item{tickAxis}{numeric: Which side of the axis should the ticks and labels
-be added? This determines orientation: 1 (bottom) and 3 (top) are
-horizontal, 2 (left) and 4 (right) are vertical. Default is 1.}
+be added? This argument determines the kulaBar orientation: 1 (bottom;
+default) and 3 (top) are horizontal; 2 (left) and 4 (right) are vertical.}
 
 \item{nameAxis}{numeric: Which side of the axis should the name be added?}
 
 \item{labels}{vector: If not NULL, values are used as labels for the ticks
 along the axis instead of the values calculated from 'range' and
 'increments'. Useful for adding something such as "<0" for example.
-Labels must be provided for all ticks (i.e. assuming that 'labelEvery' =
-1), even if 'labelEvery' is not 1. See examples.}
+
+\strong{Note:} Labels must be provided for all ticks (i.e. assuming that
+'labelEvery' = 1), even if 'labelEvery' is not 1. See examples.}
 
 \item{mar}{vector: Set the margins around the kulaBar (as par(mar = mar)).}
 
 \item{labelFirst}{Which is the first tick that should be labelled? Use the
-index, not the value. See \code{figuR::add_axis()}.}
+index, not the value. See \code{\link[figuR:add_axis]{figuR::add_axis()}}.}
 
 \item{labelEvery}{Labels should be added every how many ticks? See
-\code{figuR::add_axis()}.}
+\code{\link[figuR:add_axis]{figuR::add_axis()}}.}
 
 \item{...}{Any additional parameters not listed above that can be fed into
-figuR::add_axis().}
+\code{\link[figuR:add_axis]{figuR::add_axis()}}.}
 }
 \description{
 Add a colour bar / legend with more fine control. Make sure to
-prepare the plot area before using this function (using e.g. \code{layout()}).
-The function essentially plots a matrix with a single row / column using
-the \code{graphics::image()}, and then uses \code{figuR::add_axis()}.
+prepare the plot area before using this function (using e.g. \code{\link[=layout]{layout()}}).
+The function essentially plots a coloured matrix of a single row / column
+using \code{\link[graphics:image]{graphics::image()}}, and then uses \code{figuR::add_axis()} to add the
+values.
 }
 \examples{
   \dontrun{

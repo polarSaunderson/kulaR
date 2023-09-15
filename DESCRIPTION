@@ -1,7 +1,7 @@
 Package: kulaR
 Type: Package
 Title: Easily Use Colour Schemes in R
-Version: 0.0.1.1
+Version: 0.0.1.2
 Authors@R: 
     person("Dominic", "Saunderson",
            role = c("aut", "cre"),

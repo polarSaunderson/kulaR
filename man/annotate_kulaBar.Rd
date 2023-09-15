@@ -14,9 +14,10 @@ annotate_kulaBar(
   belowLeft = "",
   below = "",
   belowRight = "",
-  offset_v = c(10, 15),
+  offset_v = c(0.1, 0.15),
   offset_h = 0,
-  cex = 0.75
+  cex = 0.75,
+  col = "black"
 )
 }
 \arguments{
@@ -30,21 +31,28 @@ kulaBar in the respective positions.}
 respective positions.}
 
 \item{offset_v}{numeric: How far from the kulaBar should the text be
-located vertically? Positive values move text away from the kulaBar; unit
-is percentage of the kulaBar height. If two values are provided, the
-first values moves the text strings above the bar, and the second the
-strings below; for a single value, both sets are moved the same distance
-\emph{away} (if positive) or \emph{towards} (if negative) from the kulaBar.
+located vertically?
+
+Positive values move text away from the kulaBar, and the unit is in
+fractions of the kulaBar height. If two values are provided, the first
+values moves the text strings that are above the bar, and the second the
+strings that are below; for a single value, both sets are moved the same
+distance \emph{away} (if positive) or \emph{towards} (if negative) from the
+kulaBar.
+
 'midLeft', 'mid' and 'midRight' text cannot be vertically offset, they
 just stick to the centre of the kulaBar.}
 
 \item{offset_h}{numeric: As for 'offset_v' but horizontal offsets. If two
 values are supplied, the first applies to the left side and the second to
-the right side. Units are percentage of the kulaBar \emph{width}. 'mid',
-'above' and 'below' text cannot be horizontally offset, they just stick
-to the centre of the kulaBar.}
+the right side. Units are fractions of the kulaBar \emph{width}.
+
+'mid', 'above' and 'below' text cannot be horizontally offset, they just
+stick to the centre of the kulaBar.}
 
 \item{cex}{numeric: How large should the text be?}
+
+\item{col}{What colour should the text be?}
 }
 \description{
 This function is particularly useful when a kulaBar displays
@@ -67,7 +75,5 @@ immediately after using \code{add_kulaBar()}.
                      NA,       NULL, "",
                      "colder", "OR", "less warm")
   }
-
-
 
 }

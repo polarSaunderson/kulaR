@@ -5,47 +5,57 @@ add_kulaBar <- function(kula,
                         nameAxis = NULL,
                         labels = NULL,
                         mar = NULL,
+                        frame = "black",
                         labelFirst = 1,
                         labelEvery = 1, ...) {
   #' Add a custom colour bar
   #'
   #' @description Add a colour bar / legend with more fine control. Make sure to
-  #'   prepare the plot area before using this function (using e.g. `layout()`).
-  #'   The function essentially plots a matrix with a single row / column using
-  #'   the `graphics::image()`, and then uses `figuR::add_axis()`.
+  #'   prepare the plot area before using this function (using e.g. [layout()]).
+  #'   The function essentially plots a coloured matrix of a single row / column
+  #'   using [graphics::image()], and then uses `figuR::add_axis()` to add the
+  #'   values.
   #'
   #' @param kula The colours to plot in the colour bar. Either a vector of
   #'   colours (e.g. a colour_scheme from `khroma`), or a string that is fed
-  #'   into `kulaK()` (a wrapper around `khroma::colour()`). Usually, it makes
-  #'   more sense to provide a vector (e.g. the output of `kulaR::kulaK()`)
-  #'   because this provides more flexibility and is likely being used in
-  #'   whatever the colour bar refers to.
+  #'   into [kulaK()] (which is a just a wrapper around [khroma::colour()]).
+  #'
+  #'   Usually, it makes more sense to input a vector (e.g. the output of
+  #'   [kulaK()]) because it allows more flexibility in colour definitions and
+  #'   is likely being used in whatever the colour bar refers to.
   #' @param range vector: min and max values for the kulaBar. The min will
   #'   always be plotted to the left of horizontal bars, or at the bottom of
   #'   vertical bar.
   #' @param increments numeric: How much change is represented by one block of
-  #'   colour along the bar? If kula is a colour scheme, this argument is
-  #'   ignored and the increments are calculated automatically by dividing the
-  #'   full range by the length of the kula vector. If 'kula' is a string (e.g.
-  #'   "BuRd"), the increments cannot be calculated automatically so this value
-  #'   is necessary; in such a case, the difference between the 'range' values
-  #'   must be an exact multiple of the 'increment' argument.
+  #'   colour along the bar?
+  #'
+  #'   If 'kula' is a colour scheme, this argument is ignored and the increments
+  #'   are calculated automatically by dividing the 'range' by the length of the
+  #'   'kula' vector.
+  #'
+  #'   If 'kula' is a string (e.g. "BuRd"), the increments cannot be calculated
+  #'   automatically and this value is mandatory; in such a case, the difference
+  #'   between the 'range' values must be an exact multiple of the 'increment'
+  #'   argument.
+  #'
   #' @param tickAxis numeric: Which side of the axis should the ticks and labels
-  #'   be added? This determines orientation: 1 (bottom) and 3 (top) are
-  #'   horizontal, 2 (left) and 4 (right) are vertical. Default is 1.
+  #'   be added? This argument determines the kulaBar orientation: 1 (bottom;
+  #'   default) and 3 (top) are horizontal; 2 (left) and 4 (right) are vertical.
+  #'
   #' @param nameAxis numeric: Which side of the axis should the name be added?
   #' @param labels vector: If not NULL, values are used as labels for the ticks
   #'   along the axis instead of the values calculated from 'range' and
   #'   'increments'. Useful for adding something such as "<0" for example.
-  #'   Labels must be provided for all ticks (i.e. assuming that 'labelEvery' =
-  #'   1), even if 'labelEvery' is not 1. See examples.
+  #'
+  #'   **Note:** Labels must be provided for all ticks (i.e. assuming that
+  #'   'labelEvery' = 1), even if 'labelEvery' is not 1. See examples.
   #' @param mar vector: Set the margins around the kulaBar (as par(mar = mar)).
   #' @param labelFirst Which is the first tick that should be labelled? Use the
-  #'   index, not the value. See `figuR::add_axis()`.
+  #'   index, not the value. See [figuR::add_axis()].
   #' @param labelEvery Labels should be added every how many ticks? See
-  #'   `figuR::add_axis()`.
+  #'   [figuR::add_axis()].
   #' @param ... Any additional parameters not listed above that can be fed into
-  #'   figuR::add_axis().
+  #'   [figuR::add_axis()].
   #'
   #' @examples
   #'   \dontrun{
@@ -140,9 +150,12 @@ add_kulaBar <- function(kula,
                   axes = FALSE, xaxs = "i", yaxs = "i")
   figuR::add_axis(tickAxis,
                   labels = labels,
-                  alignMidPoints = FALSE,
+                  alignMidPoints = FALSE, gridLwd = 0,
                   labelFirst = labelFirst, labelEvery = labelEvery,
                   ...)
+  if (!is.null(frame)) {
+    figuR::add_plot_frame(kula = frame)
+  }
 
   return(invisible(kula))
 }
