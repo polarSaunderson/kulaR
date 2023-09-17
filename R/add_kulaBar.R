@@ -2,6 +2,7 @@ add_kulaBar <- function(kula,
                         range,
                         increments = NULL,
                         axisSide = 1,
+                        name = NULL,
                         nameSide = NULL,
                         alignMidPoints = FALSE,
                         labels = NULL,
@@ -154,7 +155,7 @@ add_kulaBar <- function(kula,
                   labels = labels,
                   alignMidPoints = alignMidPoints, gridLwd = 0,
                   labelFirst = labelFirst, labelEvery = labelEvery,
-                  nameSide = nameSide,
+                  name = name, nameSide = nameSide,
                   ...)
   if (!is.null(frame)) {
     figuR::add_plot_frame(kula = frame)

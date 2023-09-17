@@ -9,6 +9,7 @@ add_kulaBar(
   range,
   increments = NULL,
   axisSide = 1,
+  name = NULL,
   nameSide = NULL,
   alignMidPoints = FALSE,
   labels = NULL,
