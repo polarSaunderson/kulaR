@@ -1,8 +1,9 @@
 add_kulaBar <- function(kula,
                         range,
                         increments = NULL,
-                        tickAxis = 1,
-                        nameAxis = NULL,
+                        axisSide = 1,
+                        nameSide = NULL,
+                        alignMidPoints = FALSE,
                         labels = NULL,
                         mar = NULL,
                         frame = "black",
@@ -33,16 +34,15 @@ add_kulaBar <- function(kula,
   #'   are calculated automatically by dividing the 'range' by the length of the
   #'   'kula' vector.
   #'
-  #'   If 'kula' is a string (e.g. "BuRd"), the increments cannot be calculated
-  #'   automatically and this value is mandatory; in such a case, the difference
-  #'   between the 'range' values must be an exact multiple of the 'increment'
-  #'   argument.
+  #'   If 'kula' is a valid `khroma` name (e.g. "BuRd"), the increments cannot
+  #'   be calculated automatically and this argument is mandatory; in such a
+  #'   case, the difference between the 'range' values must be an exact multiple
+  #'   of the 'increment' argument.
   #'
-  #' @param tickAxis numeric: Which side of the axis should the ticks and labels
+  #' @param axisSide numeric: Which side of the axis should the ticks and labels
   #'   be added? This argument determines the kulaBar orientation: 1 (bottom;
   #'   default) and 3 (top) are horizontal; 2 (left) and 4 (right) are vertical.
   #'
-  #' @param nameAxis numeric: Which side of the axis should the name be added?
   #' @param labels vector: If not NULL, values are used as labels for the ticks
   #'   along the axis instead of the values calculated from 'range' and
   #'   'increments'. Useful for adding something such as "<0" for example.
@@ -50,12 +50,12 @@ add_kulaBar <- function(kula,
   #'   **Note:** Labels must be provided for all ticks (i.e. assuming that
   #'   'labelEvery' = 1), even if 'labelEvery' is not 1. See examples.
   #' @param mar vector: Set the margins around the kulaBar (as par(mar = mar)).
+  #' @param frame What colour should the border around the kulaBar be? Set as
+  #'   NULL to suppress the border.
   #' @param labelFirst Which is the first tick that should be labelled? Use the
   #'   index, not the value. See [figuR::add_axis()].
   #' @param labelEvery Labels should be added every how many ticks? See
   #'   [figuR::add_axis()].
-  #' @param frame What colour should the border around the kulaBar be? Set as
-  #'   NULL to suppress the border.
   #' @param ... Any additional parameters not listed above that can be fed into
   #'   [figuR::add_axis()].
   #'
@@ -114,12 +114,12 @@ add_kulaBar <- function(kula,
   kCount <- length(kGap) - 1
 
   # Determine kulaBar orientation
-  if (tickAxis %in% c(1, 3)) {                               # horizontal
+  if (axisSide %in% c(1, 3)) {                               # horizontal
     kulaMatrix <- matrix(1:(kCount), nrow = kCount)
-    nameAxis   <- set_if_null(nameAxis, 3)   # from domR
-  } else if (tickAxis %in% c(2, 4)) {                        # horizontal
+    nameSide   <- set_if_null(nameSide, 3)   # from domR
+  } else if (axisSide %in% c(2, 4)) {                        # horizontal
     kulaMatrix <- matrix(1:(kCount), ncol = kCount)
-    nameAxis   <- set_if_null(nameAxis, tickAxis)  # from domR
+    nameSide   <- set_if_null(nameSide, axisSide)  # from domR
   }
 
   # Define colours
@@ -150,10 +150,11 @@ add_kulaBar <- function(kula,
   # Plot the kulaBar
   graphics::image(kulaMatrix, col = kula,
                   axes = FALSE, xaxs = "i", yaxs = "i")
-  figuR::add_axis(tickAxis,
+  figuR::add_axis(axisSide,
                   labels = labels,
-                  alignMidPoints = FALSE, gridLwd = 0,
+                  alignMidPoints = alignMidPoints, gridLwd = 0,
                   labelFirst = labelFirst, labelEvery = labelEvery,
+                  nameSide = nameSide,
                   ...)
   if (!is.null(frame)) {
     figuR::add_plot_frame(kula = frame)

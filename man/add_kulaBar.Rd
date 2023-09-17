@@ -8,8 +8,9 @@ add_kulaBar(
   kula,
   range,
   increments = NULL,
-  tickAxis = 1,
-  nameAxis = NULL,
+  axisSide = 1,
+  nameSide = NULL,
+  alignMidPoints = FALSE,
   labels = NULL,
   mar = NULL,
   frame = "black",
@@ -38,16 +39,14 @@ If 'kula' is a colour scheme, this argument is ignored and the increments
 are calculated automatically by dividing the 'range' by the length of the
 'kula' vector.
 
-If 'kula' is a string (e.g. "BuRd"), the increments cannot be calculated
-automatically and this value is mandatory; in such a case, the difference
-between the 'range' values must be an exact multiple of the 'increment'
-argument.}
+If 'kula' is a valid \code{khroma} name (e.g. "BuRd"), the increments cannot
+be calculated automatically and this argument is mandatory; in such a
+case, the difference between the 'range' values must be an exact multiple
+of the 'increment' argument.}
 
-\item{tickAxis}{numeric: Which side of the axis should the ticks and labels
+\item{axisSide}{numeric: Which side of the axis should the ticks and labels
 be added? This argument determines the kulaBar orientation: 1 (bottom;
 default) and 3 (top) are horizontal; 2 (left) and 4 (right) are vertical.}
-
-\item{nameAxis}{numeric: Which side of the axis should the name be added?}
 
 \item{labels}{vector: If not NULL, values are used as labels for the ticks
 along the axis instead of the values calculated from 'range' and
