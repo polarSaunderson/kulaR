@@ -58,6 +58,9 @@ along the axis instead of the values calculated from 'range' and
 
 \item{mar}{vector: Set the margins around the kulaBar (as par(mar = mar)).}
 
+\item{frame}{What colour should the border around the kulaBar be? Set as
+NULL to suppress the border.}
+
 \item{labelFirst}{Which is the first tick that should be labelled? Use the
 index, not the value. See \code{\link[figuR:add_axis]{figuR::add_axis()}}.}
 

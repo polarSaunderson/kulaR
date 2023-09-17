@@ -54,6 +54,8 @@ add_kulaBar <- function(kula,
   #'   index, not the value. See [figuR::add_axis()].
   #' @param labelEvery Labels should be added every how many ticks? See
   #'   [figuR::add_axis()].
+  #' @param frame What colour should the border around the kulaBar be? Set as
+  #'   NULL to suppress the border.
   #' @param ... Any additional parameters not listed above that can be fed into
   #'   [figuR::add_axis()].
   #'
