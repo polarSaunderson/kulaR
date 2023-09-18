@@ -11,7 +11,6 @@ add_kulaBar(
   axisSide = 1,
   name = NULL,
   nameSide = NULL,
-  alignMidPoints = FALSE,
   labels = NULL,
   mar = NULL,
   frame = "black",
@@ -48,6 +47,11 @@ of the 'increment' argument.}
 \item{axisSide}{numeric: Which side of the axis should the ticks and labels
 be added? This argument determines the kulaBar orientation: 1 (bottom;
 default) and 3 (top) are horizontal; 2 (left) and 4 (right) are vertical.}
+
+\item{name}{"string": What does the axis show?}
+
+\item{nameSide}{numeric: Which side of the axis (**NOT** the plot), should
+the name be added? Default is to the outside of the axis.}
 
 \item{labels}{vector: If not NULL, values are used as labels for the ticks
 along the axis instead of the values calculated from 'range' and
@@ -87,7 +91,7 @@ values.
     kk <- kulaK(palette = "bamako", count = 14,
                 reverse = TRUE,
                 addFirst = "magenta", include = 1:10)
-    add_kulaBar(kula = kk, range = c(1, 16),
+    add_kulaBar(kula = kk, range = c(1, 15),
                 labels = c("", "<0", 1:10), labelEvery = 2, labelFirst = 2)
 
     # Without first defining the colour palette

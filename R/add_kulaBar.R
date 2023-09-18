@@ -4,7 +4,6 @@ add_kulaBar <- function(kula,
                         axisSide = 1,
                         name = NULL,
                         nameSide = NULL,
-                        alignMidPoints = FALSE,
                         labels = NULL,
                         mar = NULL,
                         frame = "black",
@@ -59,6 +58,7 @@ add_kulaBar <- function(kula,
   #'   [figuR::add_axis()].
   #' @param ... Any additional parameters not listed above that can be fed into
   #'   [figuR::add_axis()].
+  #' @inheritParams figuR::add_axis
   #'
   #' @examples
   #'   \dontrun{
@@ -70,7 +70,7 @@ add_kulaBar <- function(kula,
   #'     kk <- kulaK(palette = "bamako", count = 14,
   #'                 reverse = TRUE,
   #'                 addFirst = "magenta", include = 1:10)
-  #'     add_kulaBar(kula = kk, range = c(1, 16),
+  #'     add_kulaBar(kula = kk, range = c(1, 15),
   #'                 labels = c("", "<0", 1:10), labelEvery = 2, labelFirst = 2)
   #'
   #'     # Without first defining the colour palette
@@ -153,7 +153,7 @@ add_kulaBar <- function(kula,
                   axes = FALSE, xaxs = "i", yaxs = "i")
   figuR::add_axis(axisSide,
                   labels = labels,
-                  alignMidPoints = alignMidPoints, gridLwd = 0,
+                  alignMidPoints = FALSE, gridLwd = 0,
                   labelFirst = labelFirst, labelEvery = labelEvery,
                   name = name, nameSide = nameSide,
                   ...)

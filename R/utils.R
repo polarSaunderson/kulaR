@@ -13,19 +13,6 @@ set_if_null <- function(x, defaultValue) {
   #'
   #' @param x Which argument is being checked?
   #' @param defaultValue What's the value if the argument is NULL?
-  #'
-  #' @examples
-  #'   # simpify example with unnecessary use
-  #'   xFunc <- function(x, y = NULL) {
-  #'     if (x < 0) {
-  #'       y <- set_if_null(y, 2)
-  #'     } else {
-  #'       y <- set_if_null(y, 3)
-  #'     }
-  #'     z <- x ^ y
-  #'   }
-  #'
-  #' @export
 
   # Code -----------------------------------------------------------------------
   if (is.null(x)) x <- defaultValue
@@ -42,14 +29,6 @@ set_if_null <- function(x, defaultValue) {
   #'
   #' @param x the values we are interested in
   #' @param y the values to compare against
-  #'
-  #' @examples
-  #'   x <- c(1, 2, 3)
-  #'   y <- c(2, 3, 4, 5)
-  #'   z1 <- x %notIn% y    # should be TRUE,  FALSE, FALSE
-  #'   z2 <- y %notIn% x    # should be FALSE, FALSE, TRUE, TRUE
-  #'
-  #' @export
 
   # Code ----------------------------------------------------------------------!
   match(x, y, nomatch = 0) == 0
@@ -67,8 +46,6 @@ count_decimal_places <- function(x) {
   #'   and I do not entirely understand how it works.
   #'
   #' @param x numeric: The value
-  #'
-  #' @export
 
   # Code -----------------------------------------------------------------------
   # Preallocate
