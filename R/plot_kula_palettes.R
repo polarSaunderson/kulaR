@@ -25,7 +25,7 @@ plot_kula_palettes <- function(orientation = "v", type = NULL) {
 
   for (ii in seq_along(kNames)) {
     add_kulaBar(kula = kNames[ii], range = 1:kLengths[ii], increments = 1,
-                tickAxis = switch(orientation, h = 1, v = 2, 2), gridLwd = 0,
+                axisSide = switch(orientation, h = 1, v = 2, 2),
                 labels = rep("", kLengths[ii]),
                 tickLength = 0)
     figuR::add_axis(3, name = kNames[ii], tickLength = 0, nameCex = 0.95,
