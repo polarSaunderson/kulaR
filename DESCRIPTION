@@ -1,7 +1,7 @@
 Package: kulaR
 Type: Package
 Title: Easily Use Colour Schemes in R
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: 
     person("Dominic", "Saunderson",
            role = c("aut", "cre"),
@@ -24,3 +24,5 @@ Imports:
     grDevices
 Suggests:
     figuR
+Remotes:
+    polarSaunderson/figuR
