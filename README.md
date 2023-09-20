@@ -1,30 +1,34 @@
 # kulaR
 
-**PRIVATE BRANCH OF THE pkg02_kulaR PACKAGE**
-
 ## Overview
-The kulaR package is largely a wrapper around the [khroma](https://packages.tesselle.org/khroma/index.html) package to automate common tasks with colours in R. 
-It builds off the existing colour palettes in khroma, which are all colourblind friendly, but provides a common syntax for using them. 
-It also has capabilities of creating better automated colour schemes, and adding legends.
-This package is the first R package that I have created and will likely have issues at the beginning.
+`kulaR` is largely a wrapper around the [khroma](https://packages.tesselle.org/khroma/index.html) package to automates common tasks when selecting and using colours in R.
+It builds off the existing colour palettes in `khroma`, which are all colourblind friendly, but provides an alternative, unified syntax for using the palettes. 
+There are also capabilities of creating better automated colour schemes, and to add custom colour bars and legends.
 
-## Public Version
-The public version of this repo can be accessed at:
-  https://github.com/polarSaunderson/kulaR
+**Note** `kulaR` is the first R package that I have created and will likely have issues. It is currently being tested.
 
-## To-Do
-### 2023-09-03
-- [ ] Verify replacement of `terra` calls definitely works
+## Instructions
+This package is mainly a personal package, so it is not available on CRAN.
+To download this package directly from GitHub, you'll need to use the "devtools" package.
+It's easiest to do this within RStudio.
 
-### 2023-08-26
-- [ ] Improve documentation where necessary
+1) Install the [devtools](https://github.com/hadley/devtools) and [khroma](https://packages.tesselle.org/khroma/) packages from CRAN. 
+``` R
+install.packages("devtools")
+install.packages("khroma")
+```
 
-### 2023-07-28
-- [X] Create add_kula_bar 
-  - [X] Work on associated text / annotation functions
-- [X] Figure out the link between this package & domR (e.g. pre_plot, add_axis)
-- [X] Add the plot_kula_palettes functions
-- [ ] Fix the part of kulaK that doesn't work great
-  - I forget exactly which issue, revisit the Obsidian notes
-  - Maybe when using an odd number of colours and skipping or subsetting (?)
-- [ ] Expand on the package documentation for a fuller overview
+2) Load the devtools package:
+```R
+library(devtools)
+```
+
+3) Install kulaR directly from GitHub.
+```R
+devtools::install_github("polarSaunderson/kulaR")
+```
+
+4) Load the kulaR package
+```R
+library(kulaR)
+```

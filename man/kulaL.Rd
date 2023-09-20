@@ -14,8 +14,8 @@ kulaL(shade = 4, opacity = 10)
 \description{
 For plotting lines, we often want a simple grey or black
 colour, which can take require unnecessarily verbose code; this function
-simplifies all of that for us and provides a wrapper around the \code{rgb()}
+simplifies all of that for us and provides a wrapper around the \code{\link[=rgb]{rgb()}}
 function that is more consistent with the "kulaR" syntax. See also
-\code{kulaT()}, which is the same, but swaps the order of the arguments to
+\code{\link[=kulaT]{kulaT()}}, which is the same, but swaps the order of the arguments to
 make it slightly easier for changing the line transparency.
 }
