@@ -3,6 +3,8 @@
 export(add_kulaBar)
 export(annotate_kulaBar)
 export(get_kulaInfo)
+export(kulaC)
+export(kulaC2)
 export(kulaD)
 export(kulaD2)
 export(kulaD3)
