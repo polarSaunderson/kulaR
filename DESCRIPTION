@@ -12,7 +12,7 @@ Description: `kulaR` is largely a wrapper around the "khroma" package to
     palettes in "khroma"", which are colourblind safe, but provides an 
     alternative, unified syntax for using the palettes. There are also 
     capabilities of creating better automated colour schemes, and to add custom
-    colour bars and legends. v0.1.3-rc1.
+    colour bars and legends.
 License: GPL (>= 3)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
