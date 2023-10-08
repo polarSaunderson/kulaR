@@ -15,7 +15,7 @@ It's easiest to do this within RStudio.
 1) Install the [devtools](https://github.com/hadley/devtools) and [khroma](https://packages.tesselle.org/khroma/) packages from CRAN. 
 ``` R
 install.packages("devtools")
-install.packages("khroma")
+install.packages("khroma")   # fundamental for `kulaR`
 ```
 
 2) Load the devtools package:
@@ -28,7 +28,13 @@ library(devtools)
 devtools::install_github("polarSaunderson/kulaR")
 ```
 
-4) Load the kulaR package
+4) The `add_kulaBar` and `plot_kula_palettes` functions  in `kulaR` also require my `figuR` package.
+If you want to use these functions, it is necessary to also install the ´figuR` package:
+```R
+devtools::install_github("polarSaunderson/figuR")
+```
+
+5) Load the kulaR package
 ```R
 library(kulaR)
 ```
