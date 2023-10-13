@@ -12,7 +12,7 @@ list_kulaS_palettes(print = TRUE)
 used in other functions.}
 }
 \description{
-A wrapper around \code{khroma::info()}, but only showing sequential
+A wrapper around \code{\link[khroma:info]{khroma::info()}}, but only showing sequential
 colour schemes. kulaInfo is invisibly returned. Use \code{list_kulaC_palettes}
 for circular palettes.
 }

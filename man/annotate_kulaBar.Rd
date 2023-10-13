@@ -58,7 +58,7 @@ stick to the centre of the kulaBar.}
 This function is particularly useful when a kulaBar displays
 differences that are not immediately intuitive. The function simply adds
 text at up to 9 locations around the kulaBar. It needs to be called
-immediately after using \code{add_kulaBar()}.
+immediately after using \code{\link[=add_kulaBar]{add_kulaBar()}}.
 }
 \examples{
   \dontrun{

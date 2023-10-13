@@ -12,13 +12,13 @@ add_kulaBar <- function(kula,
   #' Add a custom colour bar
   #'
   #' @description Add a colour bar / legend with more fine control. Make sure to
-  #'   prepare the plot area before using this function (using e.g. [layout()]).
-  #'   The function essentially plots a coloured matrix of a single row / column
-  #'   using [graphics::image()], and then uses `figuR::add_axis()` to add the
-  #'   values.
+  #'   prepare the plot area before using this function (using e.g.
+  #'   [graphics::layout()]). The function essentially plots a coloured matrix
+  #'   of a single row / column using [graphics::image()], and then uses
+  #'   [figuR::add_axis()] to add the values.
   #'
   #' @param kula The colours to plot in the colour bar. Either a vector of
-  #'   colours (e.g. a colour_scheme from `khroma`), or a string that is fed
+  #'   colours (e.g. a colour_scheme from [khroma]), or a string that is fed
   #'   into [kulaK()] (which is a just a wrapper around [khroma::colour()]).
   #'
   #'   Usually, it makes more sense to input a vector (e.g. the output of

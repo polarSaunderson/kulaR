@@ -14,8 +14,8 @@ kulaT(opacity = 4, shade = 10)
 \description{
 For plotting lines, we often want a simple grey or black
 colour, which can take require unnecessarily verbose code; this function
-simplifies all of that for us and provides a wrapper around the \code{rgb()}
-function that is more consistent with the "kulaR" syntax. See also
-\code{kulaL()}, which is the same, but swaps the order of the arguments to
-make it slightly easier for changing the line colour.
+simplifies all of that for us and provides a wrapper around the
+\code{\link[grDevices:rgb]{grDevices::rgb()}} function that is more consistent with the "kulaR"
+syntax. See also \code{\link[=kulaL]{kulaL()}}, which is the same, but swaps the order of the
+arguments to make it slightly easier for changing the line colour.
 }

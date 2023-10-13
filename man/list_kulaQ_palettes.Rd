@@ -12,6 +12,6 @@ list_kulaQ_palettes(print = TRUE)
 used in other functions.}
 }
 \description{
-A wrapper around \code{khroma::info()}, but only showing
+A wrapper around \code{\link[khroma:info]{khroma::info()}}, but only showing
 qualitative colour schemes. kulaInfo is invisibly returned.
 }

@@ -10,13 +10,13 @@ kulaQ2(include = NULL, ...)
 \item{include}{"string" or c(vector): Return only a subset of the colours.
 Can either be defined by their name, or their index.}
 
-\item{...}{Any arguments that can be used by the \code{kulaK()} function,
+\item{...}{Any arguments that can be used by the \code{\link[=kulaK]{kulaK()}} function,
 although "skipMid", and "reverse" don't make much sense.}
 }
 \description{
-Just a wrapper around \code{kulaK()} (which is a wrapper around
-khroma) for when we want to use a qualitative colour scheme. Either
-return the full "vibrant" palette (the default), or add an index /
+Just a wrapper around \code{\link[=kulaK]{kulaK()}} (which is a wrapper around
+\code{\link[khroma:colour]{khroma::colour()}}) for when we want to use a qualitative colour scheme.
+Either return the full "vibrant" palette (the default), or add an index /
 character strings to select a subset of the colours (useful for e.g.
 nicer line colours and matching lines across plots). The options are:
 "orange", "blue", "cyan", "magenta", "red", "teal", and "grey".
