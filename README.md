@@ -28,7 +28,7 @@ library(devtools)
 devtools::install_github("polarSaunderson/kulaR")
 ```
 
-4) The `add_kulaBar` and `plot_kula_palettes` functions  in `kulaR` also require my [figuR](https:://github.com/polarSaunderson/figuR) package.
+4) The `add_kulaBar` and `plot_kula_palettes` functions  in `kulaR` also require my [figuR](https://github.com/polarSaunderson/figuR) package.
 If you want to use these functions, it is necessary to also install the ´figuR` package:
 ```R
 devtools::install_github("polarSaunderson/figuR")
