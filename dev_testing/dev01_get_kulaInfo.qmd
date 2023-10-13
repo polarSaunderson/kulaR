@@ -1,0 +1,62 @@
+```{r}
+x1 <- c(-0.2, 0.45)
+x2 <- matrix(-2:117, nrow = 20)
+x3 <- list(x1, x2, c(-3.33, 199))
+x4 <- terra::rast(system.file("ex/logo.tif", package="terra"))  
+
+get_info <- function(x, 
+                     tickCount = 12,
+                     palette = NULL, 
+                     skipMid = NULL, 
+                     reverse = FALSE) {
+  # Get the range
+  if ("SpatRaster" %in% methods::is(x)) {
+    x <- as.matrix(x)
+  } else {
+    x <- unlist(x)
+  }
+  xRange <- range(x, na.rm = TRUE)
+
+  # zInfo
+  zTicks <- base::pretty(xRange, n = tickCount)
+  zIncas <- zTicks[2] - zTicks[1]
+  zNegat <- length(zTicks[zTicks < 0])
+  zPosit <- length(zTicks[zTicks > 0])
+  zRange <- range(zTicks)
+  
+  # Define colours
+  if (zNegat > 0 & zPosit > 0) {
+    zHalfway <- max(zNegat, zPosit)
+    palette <- set_if_null(palette, "BuRd")
+    zKulas <- kulaK(palette, count = zHalfway * 2,
+                    include = c(zNegat, zPosit),
+                    skipMid = skipMid, reverse = reverse)
+  } else {
+    if (zPosit > 0) {
+      palette <- set_if_null(palette, "lajolla") # default increasing
+    } else if (zNegat > 0) {
+      palette <- set_if_null(palette, "devon") # default decreasing
+    }
+    zKulas <- kulaK(palette, count = length(zTicks) - 1, reverse = reverse)
+  }
+  
+  zInfo <- list("zKulas" = zKulas,
+                "zRange" = zRange,
+                "zIncrement" = zIncas,
+                "zNegatives" = zNegat,
+                "zPositives" = zPosit,
+                "zTicks" = zTicks)
+  return(zInfo)  
+}
+
+
+get_info(x1)
+get_info(x2)
+get_info(x3)
+get_info(x4)
+
+```
+```{r}
+
+```
+
