@@ -48,6 +48,11 @@ of the 'increment' argument.}
 be added? This argument determines the kulaBar orientation: 1 (bottom;
 default) and 3 (top) are horizontal; 2 (left) and 4 (right) are vertical.}
 
+\item{name}{"string": What does the axis show?}
+
+\item{nameSide}{numeric: Which side of the axis (**NOT** the plot), should
+the name be added? Default is to the outside of the axis.}
+
 \item{labels}{vector: If not NULL, values are used as labels for the ticks
 along the axis instead of the values calculated from 'range' and
 'increments'. Useful for adding something such as "<0" for example.

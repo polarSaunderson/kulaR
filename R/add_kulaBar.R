@@ -56,9 +56,9 @@ add_kulaBar <- function(kula,
   #'   index, not the value. See [figuR::add_axis()].
   #' @param labelEvery Labels should be added every how many ticks? See
   #'   [figuR::add_axis()].
+  #' @inheritParams figuR::add_axis
   #' @param ... Any additional parameters not listed above that can be fed into
   #'   [figuR::add_axis()].
-  #' @inheritParams figuR::add_axis
   #'
   #' @examples
   #'   \dontrun{

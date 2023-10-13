@@ -18,7 +18,7 @@ kulaK(
 \arguments{
 \item{palette}{"string": Which colour palette to use? The name must match
 the options available in khroma, which can be accessed using the
-\code{\link[=list_kula_palletes]{list_kula_palletes()}} function.}
+\code{\link[=list_kula_palettes]{list_kula_palettes()}} function.}
 
 \item{count}{numeric: How many colours should be included in the colour
 scheme? Do not count additional colours that are added using the addFirst
