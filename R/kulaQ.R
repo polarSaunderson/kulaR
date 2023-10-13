@@ -1,16 +1,16 @@
 kulaQ <- function(include = NULL, ...) {
   #' Returns the "bright" qualitative khroma colour scheme
   #'
-  #' @description Just a wrapper around `kulaK()` (which is a wrapper around
-  #'   khroma) for when we want to use a qualitative colour scheme. Either
-  #'   return the full "bright" palette (the default), or add an index /
+  #' @description Just a wrapper around [kulaK()] (which is a wrapper around
+  #'   [khroma::colour()]) for when we want to use a qualitative colour scheme.
+  #'   Either return the full "bright" palette (the default), or add an index /
   #'   character strings to select a subset of the colours (useful for e.g.
   #'   nicer line colours and matching lines across plots). The options are:
   #'   "red", "blue", "green", "yellow", "cyan", "purple" and "grey".
   #'
   #' @param include "string" or c(vector): Return only a subset of the colours.
   #'   Can either be defined by their name, or their index.
-  #' @param ... Any arguments that can be used by the `kulaK()` function,
+  #' @param ... Any arguments that can be used by the [kulaK()] function,
   #'   although "skipMid", and "reverse" don't make much sense.
   #'
   #' @examples
@@ -31,16 +31,16 @@ kulaQ <- function(include = NULL, ...) {
 kulaQ2 <- function(include = NULL, ...) {
   #' Returns the "vibrant" qualitative khroma colour scheme
   #'
-  #' @description Just a wrapper around `kulaK()` (which is a wrapper around
-  #'   khroma) for when we want to use a qualitative colour scheme. Either
-  #'   return the full "vibrant" palette (the default), or add an index /
+  #' @description Just a wrapper around [kulaK()] (which is a wrapper around
+  #'   [khroma::colour()]) for when we want to use a qualitative colour scheme.
+  #'   Either return the full "vibrant" palette (the default), or add an index /
   #'   character strings to select a subset of the colours (useful for e.g.
   #'   nicer line colours and matching lines across plots). The options are:
   #'   "orange", "blue", "cyan", "magenta", "red", "teal", and "grey".
   #'
   #' @param include "string" or c(vector): Return only a subset of the colours.
   #'   Can either be defined by their name, or their index.
-  #' @param ... Any arguments that can be used by the `kulaK()` function,
+  #' @param ... Any arguments that can be used by the [kulaK()] function,
   #'   although "skipMid", and "reverse" don't make much sense.
   #'
   #' @examples
@@ -62,16 +62,16 @@ kulaQ2 <- function(include = NULL, ...) {
 kulaQ3 <- function(include = NULL, ...) {
   #' Returns the "highcontrast" qualitative khroma colour scheme
   #'
-  #' @description Just a wrapper around `kulaK()` (which is a wrapper around
-  #'   khroma) for when we want to use a qualitative colour scheme. Either
-  #'   return the full "highcontrast" palette (the default), or add an index /
-  #'   character strings to select a subset of the colours (useful for e.g.
-  #'   nicer line colours and matching lines across plots). The options are:
-  #'   "blue", "yellow" and "red".
+  #' @description Just a wrapper around [kulaK()] (which is a wrapper around
+  #'   [khroma::colour()]) for when we want to use a qualitative colour scheme.
+  #'   Either return the full "highcontrast" palette (the default), or add an
+  #'   index / character strings to select a subset of the colours (useful for
+  #'   e.g. nicer line colours and matching lines across plots). The options
+  #'   are: "blue", "yellow" and "red".
   #'
   #' @param include "string" or c(vector): Return only a subset of the colours.
   #'   Can either be defined by their name, or their index.
-  #' @param ... Any arguments that can be used by the `kulaK()` function,
+  #' @param ... Any arguments that can be used by the [kulaK()] function,
   #'   although "skipMid", and "reverse" don't make much sense.
   #'
   #' @examples

@@ -1,11 +1,11 @@
 kulaD <- function(count, ...) {
   #' Returns a diverging blue-red khroma colour scheme
   #'
-  #' @description Just a wrapper around `kulaK()` (which is a wrapper around
-  #'   khroma) for when we want to use the "BuRd" colour scheme.
+  #' @description Just a wrapper around [kulaK()] (which is a wrapper around
+  #'   [khroma::colour()]) for when we want to use the "BuRd" colour scheme.
   #'
   #' @param count numeric: How many colours should be returned?
-  #' @param ... Any arguments that can be used by the `kulaK()` function.
+  #' @param ... Any arguments that can be used by the [kulaK()] function.
   #'
   #' @examples
   #'   mm <- matrix(sample(1:100, 64), nrow = 8)
@@ -21,11 +21,11 @@ kulaD <- function(count, ...) {
 kulaD2 <- function(count, ...) {
   #' Returns a diverging purple-green khroma colour scheme
   #'
-  #' @description Just a wrapper around `kulaK()` (which is a wrapper around
-  #'   khroma) for when we want to use the "PRGn" colour scheme.
+  #' @description Just a wrapper around [kulaK()] (which is a wrapper around
+  #'   [khroma::colour()]) for when we want to use the "PRGn" colour scheme.
   #'
   #' @param count numeric: How many colours should be returned?
-  #' @param ... Any arguments that can be used by the `kulaK()` function.
+  #' @param ... Any arguments that can be used by the [kulaK()] function.
   #'
   #' @examples
   #'   mm <- matrix(sample(1:100, 64), nrow = 8)
@@ -41,11 +41,11 @@ kulaD2 <- function(count, ...) {
 kulaD3 <- function(count, ...) {
   #' Returns a diverging sunset khroma colour scheme
   #'
-  #' @description Just a wrapper around `kulaK()` (which is a wrapper around
-  #'   khroma) for when we want to use the "sunset" colour scheme.
+  #' @description Just a wrapper around [kulaK()] (which is a wrapper around
+  #'   [khroma::colour()]) for when we want to use the "sunset" colour scheme.
   #'
   #' @param count numeric: How many colours should be returned?
-  #' @param ... Any arguments that can be used by the `kulaK()` function.
+  #' @param ... Any arguments that can be used by the [kulaK()] function.
   #'
   #' @examples
   #'   mm <- matrix(sample(1:100, 64), nrow = 8)

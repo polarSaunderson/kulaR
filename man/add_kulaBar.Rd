@@ -21,7 +21,7 @@ add_kulaBar(
 }
 \arguments{
 \item{kula}{The colours to plot in the colour bar. Either a vector of
-colours (e.g. a colour_scheme from \code{khroma}), or a string that is fed
+colours (e.g. a colour_scheme from \link{khroma}), or a string that is fed
 into \code{\link[=kulaK]{kulaK()}} (which is a just a wrapper around \code{\link[khroma:colour]{khroma::colour()}}).
 
 Usually, it makes more sense to input a vector (e.g. the output of
@@ -48,11 +48,6 @@ of the 'increment' argument.}
 be added? This argument determines the kulaBar orientation: 1 (bottom;
 default) and 3 (top) are horizontal; 2 (left) and 4 (right) are vertical.}
 
-\item{name}{"string": What does the axis show?}
-
-\item{nameSide}{numeric: Which side of the axis (**NOT** the plot), should
-the name be added? Default is to the outside of the axis.}
-
 \item{labels}{vector: If not NULL, values are used as labels for the ticks
 along the axis instead of the values calculated from 'range' and
 'increments'. Useful for adding something such as "<0" for example.
@@ -76,10 +71,10 @@ index, not the value. See \code{\link[figuR:add_axis]{figuR::add_axis()}}.}
 }
 \description{
 Add a colour bar / legend with more fine control. Make sure to
-prepare the plot area before using this function (using e.g. \code{\link[=layout]{layout()}}).
-The function essentially plots a coloured matrix of a single row / column
-using \code{\link[graphics:image]{graphics::image()}}, and then uses \code{figuR::add_axis()} to add the
-values.
+prepare the plot area before using this function (using e.g.
+\code{\link[graphics:layout]{graphics::layout()}}). The function essentially plots a coloured matrix
+of a single row / column using \code{\link[graphics:image]{graphics::image()}}, and then uses
+\code{\link[figuR:add_axis]{figuR::add_axis()}} to add the values.
 }
 \examples{
   \dontrun{

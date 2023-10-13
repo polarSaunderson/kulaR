@@ -8,7 +8,7 @@ annotate_kulaBar <- function(aboveLeft = "", above = "", aboveRight = "",
   #' @description This function is particularly useful when a kulaBar displays
   #'   differences that are not immediately intuitive. The function simply adds
   #'   text at up to 9 locations around the kulaBar. It needs to be called
-  #'   immediately after using `add_kulaBar()`.
+  #'   immediately after using [add_kulaBar()].
   #'
   #' @param aboveLeft,above,aboveRight "string": Text above the kulaBar in the
   #'   respective positions.
@@ -77,9 +77,6 @@ annotate_kulaBar <- function(aboveLeft = "", above = "", aboveRight = "",
   if (length(offset_h) == 1) {
     offset_h <- c(offset_h, offset_h)
   }
-
-  # offset_v <- offset_v / 100
-  # offset_h <- offset_h / 100
 
   # above left
   graphics::text(labels = aboveLeft,
