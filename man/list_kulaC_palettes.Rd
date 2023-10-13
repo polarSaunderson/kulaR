@@ -12,6 +12,6 @@ list_kulaC_palettes(print = TRUE)
 used in other functions.}
 }
 \description{
-A wrapper around \code{khroma::info()}, but only showing circular
+A wrapper around \code{\link[khroma:info]{khroma::info()}}, but only showing circular
 colour schemes. kulaInfo is invisibly returned.
 }

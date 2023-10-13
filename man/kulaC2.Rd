@@ -9,11 +9,11 @@ kulaC2(count, ...)
 \arguments{
 \item{count}{numeric: How many colours should be returned?}
 
-\item{...}{Any arguments that can be used by the \code{kulaK()} function.}
+\item{...}{Any arguments that can be used by the \code{\link[=kulaK]{kulaK()}} function.}
 }
 \description{
-Just a wrapper around \code{kulaK()} (which is a wrapper around
-khroma) for when we want to use the "vikO" colour scheme.
+Just a wrapper around \code{\link[=kulaK]{kulaK()}} (which is a wrapper around
+\code{\link[khroma:colour]{khroma::colour()}}) for when we want to use the "vikO" colour scheme.
 }
 \examples{
   mm <- matrix(sample(1:100, 64), nrow = 8)

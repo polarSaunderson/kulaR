@@ -17,7 +17,7 @@ kulaK <- function(palette,
   #'
   #' @param palette "string": Which colour palette to use? The name must match
   #'   the options available in khroma, which can be accessed using the
-  #'   `list_kula_palletes()` function.
+  #'   [list_kula_palettes()] function.
   #' @param count numeric: How many colours should be included in the colour
   #'   scheme? Do not count additional colours that are added using the addFirst
   #'   or addLast arguments.
