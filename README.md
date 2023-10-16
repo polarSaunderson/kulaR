@@ -1,4 +1,4 @@
-# kulaR v0.1.4
+# kulaR v0.1.5
 
 ## Overview
 `kulaR` is largely a wrapper around the [khroma](https://packages.tesselle.org/khroma/index.html) package to automates common tasks when selecting and using colours in R.

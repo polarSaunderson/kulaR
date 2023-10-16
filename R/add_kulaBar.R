@@ -108,7 +108,7 @@ add_kulaBar <- function(kula,
 
   # Calculate number of values
   kGap   <- seq(kMin, kMax, increments) # also necessary for default labels
-  if (kMin %notIn% kGap | kMax %notIn% kGap) {
+  if (((kMin - min(kGap)) > 1e-10) | ((kMax - max(kGap)) > 1e-10)) {
     stop("The 'increments' argument must be an exact multiple of the difference between the 'range' values.")
   }
 

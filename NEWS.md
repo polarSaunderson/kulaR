@@ -1,3 +1,8 @@
+# kulaR 0.1.5
+
+## Internals
+- Changed guard approach to incorrect increments in `add_kulaBar()`
+
 # kulaR 0.1.4
 
 ## Internals
