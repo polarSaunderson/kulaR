@@ -75,8 +75,3 @@ get_kulaInfo <- function(x,
   return(zInfo)
 }
 
-# dec <- matrix(-5:19, nrow = 5)
-# tt  <- set_kulas(dec, palette = "sunset", skipMid = 2)
-# par(mfrow = c(1, 2))
-# image(dec)
-# image(dec, col = tt$zKula)
